@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 #create a selenium webdriver
 chrome_options = Options()
 chrome_options.add_argument('--no-sandbox')
-driver = webdriver.Chrome(chrome_options)
+driver = webdriver.Chrome(chrome_options=chrome_options)
 driver.maximize_window()
 
 #execute the graph scenario
