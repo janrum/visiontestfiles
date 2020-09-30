@@ -3,9 +3,12 @@ from nemonet.engines.graph import Graph
 from nemonet.engines.sequencer import Sequences
 from nemonet.seleniumwebdriver.commands import Command
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 #create a selenium webdriver
-driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument('--no-sandbox')
+driver = webdriver.Chrome(chrome_options)
 driver.maximize_window()
 
 #execute the graph scenario
