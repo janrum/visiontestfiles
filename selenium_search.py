@@ -2,12 +2,7 @@
 from nemonet.engines.graph import Graph
 from nemonet.engines.sequencer import Sequences
 from nemonet.seleniumwebdriver.commands import Command
-from nemonet.screencast.recording import ScreenRecorder
 from selenium import webdriver
-
-#start screenrecorder
-screenRecorder = ScreenRecorder()
-screenRecorder.start()
 
 #create a selenium webdriver
 driver = webdriver.Chrome()
@@ -22,6 +17,6 @@ commands.executeSequences(seqences, graph)
 
 #close the browser
 driver.close()
-screenRecorder.stop()
+
 
 
