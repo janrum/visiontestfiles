@@ -8,7 +8,7 @@ from selenium import webdriver
 options = webdriver.ChromeOptions()
 capabilities = options.to_capabilities()
 driver = webdriver.Remote(
-    command_executor='http://localhost:4444/wd/hub',
+    command_executor='http://0.0.0.0:4444/wd/hub',
     desired_capabilities=capabilities)
 driver.maximize_window()
 
