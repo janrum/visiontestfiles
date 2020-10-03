@@ -2,14 +2,15 @@
 from nemonet.engines.graph import Graph
 from nemonet.engines.sequencer import Sequences
 from nemonet.seleniumwebdriver.commands import Command
+from nemonet.screencast.recording import ScreenRecorder
 from selenium import webdriver
 
+#start screenrecorder
+screenRecorder = ScreenRecorder()
+screenRecorder.start()
+
 #create a selenium webdriver
-options = webdriver.ChromeOptions()
-capabilities = options.to_capabilities()
-driver = webdriver.Remote(
-    command_executor='http://127.0.0.1:4444/wd/hub',
-    desired_capabilities=capabilities)
+driver = webdriver.Chrome()
 driver.maximize_window()
 
 #execute the graph scenario
@@ -21,6 +22,4 @@ commands.executeSequences(seqences, graph)
 
 #close the browser
 driver.close()
-
-
-
+screenRecorder.stop()
